@@ -1,21 +1,35 @@
-﻿//------------------PROGRAMMA PRINCIPALE------------------------
-//Array di numeri precompilato e stampa
-int[] arrayDiNumeri = { 2, 6, 7, 5, 3, 9 };
+﻿//------------PROGRAMMA PRINCIPALE-----------------------
+//Chiediamo la dimensione dell'array
+Console.Write("Inserisci la dimensione del tuo array: ");
+int dimensione = Convert.ToInt32(Console.ReadLine());
+
+//inizializziamo l'array con una dimensione scelta da noi 
+int[] arrayDiNumeri = new int[dimensione];
+InserisciElementiArray(arrayDiNumeri, dimensione);
 StampaArray(arrayDiNumeri);
 
-//Somma numeri all'interno e stampa il risultato
+//Sommiamo i numeri all'interno dell'array
 int sommaNumeriArray = SommaElementiArray(arrayDiNumeri);
 Console.WriteLine(sommaNumeriArray);
 
-//Quadrato dei numeri dell'array in un nuovo array e stampa
+//Eleviamo al quadrato i numeri all'interno dell'array e li stampiamo in un nuovo array
 int[] arrayDiNumeriAlQuadrato = ElevaArrayAlQuadrato(arrayDiNumeri);
 StampaArray(arrayDiNumeriAlQuadrato);
 
-//Somma numeri all'interno e stampa il risultato
+//Sommiamo i numeri al quadrato all'interno di questo nuovo array 
 int sommaNumeriArrayAlQuadrato = SommaElementiArray(arrayDiNumeriAlQuadrato);
 Console.WriteLine(sommaNumeriArrayAlQuadrato);
 
 //----------------------FUNZIONI----------------------------
+//Funzione per inserire gli elementi nell'array in base alla dimensione scelta
+void InserisciElementiArray(int[] array, int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        Console.Write("Inserisci elemento nell'array: ");
+        array[i] = Convert.ToInt32(Console.ReadLine());
+    } 
+}
 //Funzione che stampa l'array
 void StampaArray(int[] array)
 {
